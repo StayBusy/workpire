@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign In | Workpire</title>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    </script>
+    <![endif]-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        *{
+            box-sizing: border-box
+        }
+        .signup-container{
+            background-color:#FAFAFA;
+            font-size: 100%;
+        }
+        .signup-card{
+            max-width: 430px;
+            min-height: auto;
+            position: relative;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: 7% auto;
+            padding: 0 47px;
+            background-color: #FFFFFF;
+            box-shadow: 0px 0px 1px #674f87, 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+        }
+        .workspire-signup-logo{
+            padding: 20px;
+            text-align: center;
+        }
+        .signup-content{
+            margin: 20px;
+            padding-bottom: 60px;            
+            color: #674F87;
+        }
+        .signup-content p.signup-first{
+            text-align: center;
+            font-size: 1.7em;
+            text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+            color: #000000;
+        }
+        .signup-nav{
+            margin-top: -12px;
+        }
+        .signup-nav ul{
+            list-style-type: none;
+            padding: 0;
+            margin-top:0;
+            margin-bottom: 20px;
+            border-radius: 2px;
+        }
+        .signup-nav ul li{
+            float:left;
+            display: block;
+            border: 1px solid #bDBDBD;
+            font-size: 1em;
+            padding: 3px 0;
+            width: 50%;
+            text-align:center;
+        }
+        .signup-nav ul li:first-child{
+            border-right: 0;
+        }
+        .signup-nav ul li.active{
+            background-color: #f2f2f2;
+        }
+        .signup-nav ul li:hover{
+            cursor: pointer;
+        }
+        .signup-form{
+            margin-top: 10px;
+        }
+        .signup-data{
+            margin-top:20px;
+            border: 1px solid #bdbdbd;
+            border-radius: 2px;
+            padding: 4px;
+            padding-left: 6px;
+            width: 100%;
+        }
+        .signup-terms{
+            margin-top: 10px;
+            font-size: 0.8em;
+            
+        }
+        .signup-terms input{
+            vertical-align: bottom;
+        }
+        .signup-form button{
+            color: white;
+            background-color: #674F87;
+            border: none !important;
+        }
+        .signup-form button:hover{
+            background-color:rgb(79, 39, 138);
+            
+        }
+        .signup-form button:active{
+            outline:none !important;
+            box-shadow: inset 2px 2px 2px rgb(52, 15, 107);
+        }
+        .signup-form button:focus{
+            outline: none !important;
+        }
+        .signup-signin{
+            margin-top: 20px;
+            font-size:0.9em;
+        }
+
+    </style>
+
+</head>
+<body>
+    <section class="signup-container" >
+        <div class="container-fluid">
+            <div class="signup-card">
+                <div class="workspire-signup-logo" >
+                    <img src="" alt="workspire logo" width="280" height="280" >
+                </div>
+                <div class="signup-content">
+                    <p class="signup-first">Sign In</p>
+                    <section class="signup-company"><!--contains company form-->
+                    <div class="signup-nav"><!--navigation-bar-->
+                        <ul>
+                            <li class="signin-companyli">Company</li>
+                            <li class="active signin-applicantli">Applicant</li>
+                        </ul>
+                    </div>
+                    <div class="signup-form">
+                        <form action="">
+                            <input type="email" name="signin-companyemail" id="" class="signup-data" placeholder="Email Address">
+                            <input type="password" name="signup-password" id="" class="signup-data" placeholder="Password">
+                            <label class="signup-terms"><a href="">Forgot Password</a></label>
+                            <button type="submit" class="signup-data">Sign In</button>                            
+                        </form>
+                    </div>
+                    <div class="signup-signin"><p>Dont have an account? <a href="signup.html">Sign Up</a> </p></div>
+                    </section>
+
+                    <section class="signup-applicant"><!--contains the applicant form-->
+                            <div class="signup-nav">
+                                <ul>
+                                    <li class="active signin-companyli">Company</li>
+                                    <li class="signin-applicantli">Applicant</li>
+                                </ul>
+                            </div>
+                            <div class="signup-form">
+                                    <form action="">
+                                            <input type="email" name="signin-applicantemail" id="" class="signup-data" placeholder="Email Address">
+                                            <input type="password" name="signup-password" id="" class="signup-data" placeholder="Password">
+                                            <label class="signup-terms"><a href="">Forgot Password</a></label>
+                                            <button type="submit" class="signup-data">Sign In</button>                             
+                                    </form>
+                            </div>
+                            <div class="signup-signin"><p>Dont have an account? <a href="signup.html">Sign Up</a> </p></div>
+                    </section>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <script>
+        $(document).ready(function(){ //hides the applicant form when document is ready
+            $('.signup-applicant').hide();
+
+            $('.signin-applicantli').click(function(){//shows applicant form when its nav is clicked
+                $('.signup-company').hide();
+                $('.signup-applicant').show();
+
+            })
+            $('.signin-companyli').click(function(){//shows company form and hides the latter
+                $('.signup-company').show();
+                $('.signup-applicant').hide();
+
+            })
+            
+        })
+
+        
+    </script>
+</body>
+</html>
