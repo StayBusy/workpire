@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home | Workpire</title>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    </script>
+    <![endif]-->
+    <!--favicon-->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800|Quicksand:400,700');
+
+        body, html{
+            overflow-x:hidden; 
+            font-family: 'Nunito Sans', sans-serif;
+          }
+
+        body::-webkit-scrollbar-track{
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+          border-radius: 8px;
+          background-color: #F5F5F5;
+        }
+
+        body::-webkit-scrollbar{
+          width: 8px;
+          background-color: #F5F5F5;
+        }
+
+        body::-webkit-scrollbar-thumb{
+          border-radius: 10px;
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+          background-color: #674F87;
+        }
+
+        /*  navbar stylings  */
+        .navbar{
+          padding: 0.5% 3%;
+          background-color: #FFFFFF;
+          margin:0;
+          font-family: 'Quicksand', sans-serif;
+        }
+
+        .navbar-brand{
+          margin-right:0;
+          padding-right: 0;
+        }
+
+        .nav.navbar-nav li a {
+          color: #674F87;
+          
+        }
+
+        .brand-name{
+          letter-spacing: 5px;
+          font-family: 'Quicksand', sans-serif;
+          font-weight: bold;
+        }
+
+        .brand-name-nav:hover{
+          color: #674F87;
+        }
+
+        .nav.navbar-nav.navbar-right li a {
+          color: #674F87;
+        }
+
+        .nav.navbar-nav.navbar-right.white li a {
+          color: #FFFFFF;
+        }
+
+        .nav.navbar-nav.navbar-right.white li a:hover {
+          color: #674F87;
+        }
+
+        .nav.navbar-nav.navbar-right.white#spacer:hover {
+          background-color: transparent;
+        }
+
+        .dropdown-menu.purple{
+          background-color: #674F87;
+        }
+
+        .get-started-btn{
+          transition: background-color 0.5s ease;
+          background-color: #674F87;
+          color: #FFFFFF;
+        }
+
+        .get-started-btn:hover{
+          background-color: #FFFFFF;
+          color: #674F87;
+          border: solid 1px #674F87;
+        }
+
+        .spacer{
+          margin-top: 14px;
+          margin-right: 25px;
+          margin-left: 25px;
+        }
+
+        /*  contents stylings  */
+        
+        #home-landing{
+          height: 95vh;
+          background-image: url('./img/home-banner.png');
+          background-repeat: no-repeat;
+          background-size: cover;
+          padding: 5% 8%;
+        }
+
+        #home-landing img{
+          width: 100%;
+        }
+
+        #banner-header{
+          font-size: 70px;
+          font-family: 'Quicksand', sans-serif;
+          font-weight: bold;
+        }
+
+        #banner-content{
+          font-family: 'Nunito Sans', sans-serif;
+          font-weight: bold;
+        }
+
+        .purple{
+          color: #674F87;
+        }
+
+        .get-started-btn.wide{
+          width: 40%;
+          padding: 2%;
+        }
+
+        .chart-container{
+          padding: 5% 8%;
+          background-color: #FAFAFA;
+        }
+
+        .chart-content{
+          padding-top: 10%;
+          padding-bottom: 5%;
+        }
+        
+        .slide-container{
+          padding: 5% 8%;
+        }
+
+        .carousel-indicators{
+          bottom:-50px;
+        }
+
+        .carousel-inner {
+          margin-bottom:50px;
+        }
+
+        .carousel-indicators li {
+          width:30px;
+          height: 5px;
+          background-color: #C4C4C4;
+          border: none;
+          bottom:-50px;
+        }
+
+        .carousel-indicators .active {
+          width:30px;
+          height: 6px;
+          background-color: #674F87;
+          border: none;
+          bottom:-50px;
+        }
+        
+        .card-container{
+          padding: 5% 3%;
+        }
+
+        .panel{
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .panel-image img{
+          width: 100%;
+        }
+
+        .panel-body{
+          padding: 10%;
+        }
+
+        .panel-body button{
+          width: 100%;
+          margin-top: 3%;
+        }
+
+        .testimonials-container{
+          padding: 5% 12%;
+          background-color: #FAFAFA;
+        }
+
+        .testimonials-carousel{
+          padding: 0 5%;
+        }
+
+        .testimonials-inner {
+          padding: 0 6%;
+          margin-bottom:150px;
+        }
+
+        .testimonials-indicators{
+          height:100px;
+          bottom:-150px;
+        }
+
+        .testimonials-indicators li{
+          transition: background-image 0.5s ease;
+          width: 100px;
+          height: 100px;
+          margin-right: 10px;
+          border-radius: 50%;
+        }
+
+        .testimonials-indicators .active{
+          width: 110px;
+          height: 110px;
+          border-radius: 50%;
+          margin-right: 10px;
+          border: solid 2px #674F87;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .carousel-control{
+          color: #674F87;
+        }
+
+        .carousel-control:hover{
+          color: #674F87;
+        }
+
+        .glyphicon{
+          color: #674F87;
+        }
+
+        #person-1{
+          background-image: url('./img/person-1.png');
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        #person-2{
+          background-image: url('./img/person-2.png');
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        #person-3{
+          background-image: url('./img/person-3.png');
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        /*  footer stylings  */
+
+        #footer{
+          position:relative;
+          bottom:0;
+          width: 100%;
+          background-color: #674F87;
+          color: #FFFFFF;
+          padding: 6% 4%;
+          padding-right: 4%;
+          font-family: 'Quicksand', sans-serif;
+        }
+
+        #footer-icons{
+          float: right;
+        }
+
+        .icon{
+          height: 30px;
+          margin-left: 10px;
+        }
+
+        @media only screen and (max-width: 500px) {
+          .nav.navbar-nav.navbar-right{
+            overflow-x:hidden; 
+          }
+          #spacer{
+            display: none;
+          }
+          body, html{
+            overflow-x:hidden; 
+          }
+         
+          #home-landing img{
+            height: 100%;
+          }
+          .get-started-btn.wide{
+            width: initial;
+            padding: 2%;
+          }
+          
+          body::-webkit-scrollbar{
+            width: 0px;
+            background-color: #F5F5F5;
+          }
+
+          #banner-header{
+            font-size: 45px;
+           }
+
+          .chart{
+            width: 100%;
+          }
+          .testimonials-container{
+            padding: 5% 5%;
+            background-color: #FAFAFA;
+          }
+          .testimonials-indicators li{
+            display: none;
+          }
+          .testimonials-indicators .active{
+            display: block;
+            margin: auto;
+            margin-top: 0;
+          }
+        }
+        @media only screen and (max-width: 780px) {
+           #home-landing{
+            background-image: url('./img/home-banner-small.png');
+          }
+          .testimonials-indicators li{
+            display: none;
+          }
+          .testimonials-indicators .active{
+            display: block;
+            margin: auto;
+            margin-top: 0;
+          }
+        }
+
+  </style>
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/workpire-logo.png" style="height:120%;" alt="workpire-logo"> </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav">
+        <li><a href="#"><span class="brand-name brand-name-nav">WORKPIRE</span></a></li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Our service #1</a></li>
+            <li><a href="#">Our service #2</a></li>
+            <li><a href="#">Our service #3</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Our special service</a></li>
+          </ul>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li id="spacer"><p class="spacer">|</p></li>
+        <li><a href="#">Login</a></li>
+        <li>
+          <form class="navbar-form">
+                <button class="btn btn-default get-started-btn">GET STARTED</button>
+          </form>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<section class="landing-page" >
+  <div id="home-landing">
+    <div class="container-fluid">
+      <div class="row" id="hide" style="display:none">
+        <div class="col-md-6">
+          <h1 id="banner-header"><span class="purple">Work</span>Pire</h1>
+          <h3 id="banner-content">Human Resources Management.</h3>
+          <h3 id="banner-content">Lorem ipsum</h3>
+          <h3 id="banner-content">dolor sit amet ipsum</h3>
+          <br><br><br><br>
+          <button class="btn btn-default get-started-btn wide">GET STARTED</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chart-container" >
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="chart-content">
+          <h2>WorkPire Recruiting</h2>
+          <p>Create a human resource management system to help optimize your recruiting process.</p><br><br>
+          <button class="btn btn-default get-started-btn">GET AN EMPLOYER'S ACCOUNT</button>
+        </div>
+      </div>
+      <div class="col-md-7 text-center">
+        <img src="img/chart.png" class="chart" alt="chart">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide-container" >
+  <div class="container-fluid">
+    <h2>Companies Hiring</h2><br>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="img/mark.png" alt="slide_1">
+            </div>
+            <div class="col-md-6">
+              <h3>Hotels.ng</h3>
+              <h4>"Find and Book hotels in Nigeria"</h4>
+              <p>Mauris a blandit turpis. Vivamus iaculis interdum erat, ac fermentum dui pharetra at. In lacinia, magna sed tempus consectetur, lorem arcu convallis massa, vitae tempor mi elit et erat. Ut felis urna, pulvinar et faucibus eget, malesuada vitae magna.</p><br>
+              <button class="btn btn-default get-started-btn">SEARCH JOBS</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="img/mark.png" alt="slide_1">
+            </div>
+            <div class="col-md-6">
+              <h3>Hotels.ng</h3>
+              <h4>"Find and Book hotels in Nigeria"</h4>
+              <p>Mauris a blandit turpis. Vivamus iaculis interdum erat, ac fermentum dui pharetra at. In lacinia, magna sed tempus consectetur, lorem arcu convallis massa, vitae tempor mi elit et erat. Ut felis urna, pulvinar et faucibus eget, malesuada vitae magna.</p><br>
+              <button class="btn btn-default get-started-btn">SEARCH JOBS</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="img/mark.png" alt="slide_1">
+            </div>
+            <div class="col-md-6">
+              <h3>Hotels.ng</h3>
+              <h4>"Find and Book hotels in Nigeria"</h4>
+              <p>Mauris a blandit turpis. Vivamus iaculis interdum erat, ac fermentum dui pharetra at. In lacinia, magna sed tempus consectetur, lorem arcu convallis massa, vitae tempor mi elit et erat. Ut felis urna, pulvinar et faucibus eget, malesuada vitae magna.</p><br>
+              <button class="btn btn-default get-started-btn">SEARCH JOBS</button>
+            </div>
+          </div>  
+        </div>
+      </div>
+
+    <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="background:none;margin-left:-11%">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next" style="background:none;margin-right:-11%">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    
+  </div>
+</section>
+
+<section class="chart-container" >
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="chart-content">
+          <h2>Find the right job for you.</h2>
+          <p>Search all the vacant positions on the web, the right job is out there.</p>
+          <p>Use <span class="purple">worpire</span> to get it. sed do eiusmod tempor incididunt ut labore.</p><br><br>
+          <button class="btn btn-default get-started-btn">REGISTER</button>
+        </div>
+      </div>
+      <div class="col-md-7 text-center">
+        <img src="img/chart.png" class="chart" alt="chart">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card-container" >
+  <div class="container-fluid center">
+    <h2>What's new at workpire?</h2><br>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-image"><img src="img/mac.png"></div>
+          <div class="panel-body"><h4><strong>Lorem ipsum dolor sit amet</strong></h4><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis felis nibh, pharetra at orci auctor, semper rhoncus metus. Integer sollicitudin posuere blandit.</p>
+          <button class="btn btn-default get-started-btn">READ ARTICLE</button>  
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-image"><img src="img/books.png"></div>
+          <div class="panel-body"><h4><strong>Lorem ipsum dolor sit amet</strong></h4><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis felis nibh, pharetra at orci auctor, semper rhoncus metus. Integer sollicitudin posuere blandit.</p>
+          <button class="btn btn-default get-started-btn">READ ARTICLE</button>  
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-image"><img src="img/stairwell.png"></div>
+          <div class="panel-body"><h4><strong>Lorem ipsum dolor sit amet</strong></h4><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis felis nibh, pharetra at orci auctor, semper rhoncus metus. Integer sollicitudin posuere blandit.</p>
+          <button class="btn btn-default get-started-btn">READ ARTICLE</button>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials-container" >
+  <div class="container-fluid">
+    <h2 class="purple text-center">Testimonials</h2><br>
+    <div class="col-md-10 col-md-offset-1 back.card">
+    <div id="myCarousel1" class="carousel slide testimonials-corousel" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators testimonials-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active" id="person-1"></li>
+        <li data-target="#myCarousel" data-slide-to="1" id="person-2"></li>
+        <li data-target="#myCarousel" data-slide-to="2" id="person-3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner testimonials-inner">
+        <div class="item active">
+          <div class="row">
+            <div class="panel panel-default col-md-10 col-md-offset-1 main-card">
+              <div class="panel-body text-center">
+                <h3>I just got a job!</h3>
+                <p>Mauris a blandit turpis. Vivamus iaculis interdum erat, ac fermentum dui pharetra at. In lacinia, magna sed tempus consectetur, lorem arcu convallis massa, vitae tempor mi elit et erat. Ut felis urna, pulvinar et faucibus eget, malesuada vitae magna. lorem arcu convallis massa, vitae tempor mi elit et erat.</p><br>
+                <p><strong>John Doe</strong> June 14, 2017</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="row">
+            <div class="panel panel-default col-md-10 col-md-offset-1 main-card">
+              <div class="panel-body text-center">
+                <h3>I just got a job!</h3>
+                <p>Mauris a blandit turpis. Vivamus iaculis interdum erat, ac fermentum dui pharetra at. In lacinia, magna sed tempus consectetur, lorem arcu convallis massa, vitae tempor mi elit et erat. Ut felis urna, pulvinar et faucibus eget, malesuada vitae magna. lorem arcu convallis massa, vitae tempor mi elit et erat.</p><br>
+                <p><strong>John Doe</strong> June 14, 2017</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="row">
+            <div class="panel panel-default col-md-10 col-md-offset-1 main-card">
+              <div class="panel-body text-center">
+                <h3>I just got a job!</h3>
+                <p>Mauris a blandit turpis. Vivamus iaculis interdum erat, ac fermentum dui pharetra at. In lacinia, magna sed tempus consectetur, lorem arcu convallis massa, vitae tempor mi elit et erat. Ut felis urna, pulvinar et faucibus eget, malesuada vitae magna. lorem arcu convallis massa, vitae tempor mi elit et erat.</p><br>
+                <p><strong>John Doe</strong> June 14, 2017</p>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+      
+
+    <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel1" data-slide="prev" style="background:none;margin-left:-11%">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel1" data-slide="next" style="background:none;margin-right:-11%">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<!-- footer begins here -->
+<footer id="footer">
+  <div class="">
+    <div class="row">
+      <div class="col-md-4">
+        <h4 class="brand-name"><img src="img/workpire-logo-white.png">&nbsp;&nbsp;&nbsp;WORKPIRE</h4>
+      </div>
+      <div class="col-md-8">
+        
+      <ul class="nav navbar-nav navbar-right white">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+          <ul class="dropdown-menu purple">
+            <li><a href="#">Our service #1</a></li>
+            <li><a href="#">Our service #2</a></li>
+            <li><a href="#">Our service #3</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Our special service</a></li>
+          </ul>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li id="spacer"><p class="spacer">|</p></li>
+        <li><a href="#">Login</a></li>
+        <li>
+          <form class="navbar-form">
+                <button class="btn btn-default get-started-btn">GET STARTED</button>
+          </form>
+        </li>
+      </ul>
+      </div>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="row">
+      <div class="col-md-2 col-xs-6">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="col-md-10 col-xs-6">
+        <p id="footer-icons"><a href = "https://twitter.com/" target = "_blank"><img src="img/twitter.png" class = "icon"></a>
+          <a href = "https://facebook.com/" target = "_blank"><img src="img/instagram.png" class = "icon"></a>
+          <a href = "https://github.com/" target = "_blank"><img src="img/facebook.png" class = "icon"></a>
+        </p>  
+      </div>
+    </div>
+  </div>
+  </footer>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#hide").show("slow").fadeIn("slow");
+    });
+  </script>
+</body>
+</html>
