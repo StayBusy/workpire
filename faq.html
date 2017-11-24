@@ -101,7 +101,7 @@
 
 
         /* Body stylings */
-        .search {
+        .search-section {
             background: url("http://res.cloudinary.com/staybusy/image/upload/v1511514626/Rectangle_k0miai.png");
             background-repeat: no-repeat;
             background-position: center center;
@@ -113,25 +113,85 @@
             height: 60vh;
         }
 
-        .search p {
+        .search-bar {
             padding-top: 12%;
+            margin-left: 25%;
+        }
+
+        .search-bar p {
             text-align: center;
+            color: #674F87;
+            font-family: 'nunito sans' sans-serif;
+            font-style: Bold;
+            Font-size: 30px;
+            line-height: 41px;
+        }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        .side-bar{
+            padding: 0;
+            margin: 0;
         }
 
         .side-bar {
-            padding-top: 10%;
+            padding-top: 6%;
+            padding-left: 20px;
+        }
+
+        .drop-down {
+            padding-top: 7%;
+            padding-left: 15%;
         }
 
         .nav-item {
+            padding-top: 1px;
+            width:200px;
+        }
+
+
+        .nav-link,
+        .nav-link:focus,
+        .nav-link:active,
+        .nav-link:visited {
             background-color: #674F87;
-            color: #ffffff;
+            width:100%;
+            color: #dddddd;
+            padding-top: 5px;
+            transition: all 1s;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -o-transition: all 1s;
+        }
+
+        .nav-link:hover {
+        background-color:#674f87;
+        border-color: #000;
+        }
+
+        .search-display {
+            padding-bottom: 5%;
         }
 
         .title {
-            padding-top: 7%;
+            padding-bottom: 5%;
+            font-family: 'nunito sans' sans-serif;
+            font-style: Bold;
+            font-size: 18px;
+            line-height: 25px;
+            color: #674F87;
         }
 
-
+        .panel-title {
+            font-family: 'nunito sans' sans-serif;
+            font-style: bold;
+            font-size: 16px;
+            color: #333333;
+            line-height: 22px;
+            align: left;
+        }
 
         /*  footer stylings  */
         #footer{
@@ -215,17 +275,17 @@
         </header>
 
         <!--search section-->
-        <section class="search">
+        <section class="search-section">
 
             <div class="container">
 
                 <div class="row">
 
-                    <div class="col-md-4 search">
+                    <div class="col-md-6 search-bar">
 
                         <p>Frequently Asked Questions</p>
 
-                        <input type="search" class="form-control" id="search" placeholder="Ask a question">
+                        <input type="text" class="form-control" id="search" placeholder="Ask a question">
 
                     </div>
 
@@ -235,11 +295,11 @@
 
         </section>
 
-        <section>
+        <section class="search-display">
 
             <div class="container">
 
-                <div class="col-md-11 col-md-offset-0.5">
+                <div class="col-md-12">
 
                     <div class="row">
 
@@ -248,7 +308,7 @@
                             <ul class="nav nav-pills flex-column">
 
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="#">Basic<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="#">Basic</a>
                                 </li>
 
                                 <li class="nav-item">
@@ -273,7 +333,7 @@
 
                 
 
-                        <div class="col-md-10 drop-down">
+                        <div class="col-md-9 drop-down">
 
                             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
@@ -283,7 +343,7 @@
 
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
 
-                                        <div class="panel-heading" role="tab" id="headingFour">
+                                        <div class="panel-heading" role="tab" id="headingOne">
 
                                             <div class="row">
 
@@ -486,9 +546,9 @@
 
                                 <div class="panel panel-default">
 
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
 
-                                        <div class="panel-heading" role="tab" id="headingFive">
+                                        <div class="panel-heading" role="tab" id="headingSix">
 
                                             <div class="row">
 
@@ -514,7 +574,7 @@
 
                                     </a>
 
-                                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                                    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
 
                                         <div class="panel-body">
                                             farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
@@ -526,9 +586,9 @@
 
                                 <div class="panel panel-default">
 
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
 
-                                        <div class="panel-heading" role="tab" id="headingFive">
+                                        <div class="panel-heading" role="tab" id="headingSeven">
 
                                             <div class="row">
 
@@ -554,7 +614,7 @@
 
                                     </a>
 
-                                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                                    <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
 
                                         <div class="panel-body">
                                             farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
@@ -566,53 +626,9 @@
 
                                 <div class="panel panel-default">
 
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
 
-                                        <div class="panel-heading" role="tab" id="headingFive">
-
-                                            <div class="row">
-
-                                                <div class="col-md-11">
-
-                                                    <h4 class="panel-title">
-
-                                                        How do i change my Password
-                                                
-                                                    </h4>
-
-                                                </div>
-                                                
-                                                <div class="col-md-1">
-
-                                                    <i class="fa fa-angle-down"></i>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </a>
-
-                                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-
-                                        <div class="panel-body">
-                                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                </div>
-
-                                <div class="title"><p>Payment</p>
-
-                                <div class="panel panel-default">
-
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-
-                                        <div class="panel-heading" role="tab" id="headingFour">
+                                        <div class="panel-heading" role="tab" id="headingEight">
 
                                             <div class="row">
 
@@ -638,127 +654,7 @@
 
                                     </a>
 
-                                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-
-                                        <div class="panel-body">
-                                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="panel panel-default">
-
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-
-                                        <div class="panel-heading" role="tab" id="headingTwo">
-
-                                            <div class="row">
-
-                                                <div class="col-md-11">
-
-                                                    <h4 class="panel-title">
-
-                                                        How do i change my Password
-                                                
-                                                    </h4>
-
-                                                </div>
-                                                
-                                                <div class="col-md-1">
-
-                                                    <i class="fa fa-angle-down"></i>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </a>
-
-                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-
-                                        <div class="panel-body">
-                                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="panel panel-default">
-
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-
-                                        <div class="panel-heading" role="tab" id="headingThree">
-
-                                            <div class="row">
-
-                                                <div class="col-md-11">
-
-                                                    <h4 class="panel-title">
-
-                                                        How do i change my Password
-                                                
-                                                    </h4>
-
-                                                </div>
-                                                
-                                                <div class="col-md-1">
-
-                                                    <i class="fa fa-angle-down"></i>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </a>
-
-                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                    
-                                        <div class="panel-body">
-                                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="panel panel-default">
-
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-
-                                        <div class="panel-heading" role="tab" id="headingFour">
-
-                                            <div class="row">
-
-                                                <div class="col-md-11">
-
-                                                    <h4 class="panel-title">
-
-                                                        How do i change my Password
-                                                
-                                                    </h4>
-
-                                                </div>
-                                                
-                                                <div class="col-md-1">
-
-                                                    <i class="fa fa-angle-down"></i>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </a>
-
-                                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                    <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
 
                                         <div class="panel-body">
                                             farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
@@ -774,9 +670,9 @@
 
                                 <div class="panel panel-default">
 
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
 
-                                        <div class="panel-heading" role="tab" id="headingFour">
+                                        <div class="panel-heading" role="tab" id="headingNine">
 
                                             <div class="row">
 
@@ -802,7 +698,7 @@
 
                                     </a>
 
-                                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                    <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
 
                                         <div class="panel-body">
                                             farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
@@ -814,9 +710,9 @@
 
                                 <div class="panel panel-default">
 
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
 
-                                        <div class="panel-heading" role="tab" id="headingTwo">
+                                        <div class="panel-heading" role="tab" id="headingTen">
 
                                             <div class="row">
 
@@ -842,7 +738,7 @@
 
                                     </a>
 
-                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
 
                                         <div class="panel-body">
                                             farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
@@ -854,9 +750,9 @@
 
                                 <div class="panel panel-default">
 
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
 
-                                        <div class="panel-heading" role="tab" id="headingThree">
+                                        <div class="panel-heading" role="tab" id="headingEleven">
 
                                             <div class="row">
 
@@ -882,7 +778,7 @@
 
                                     </a>
 
-                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div id="collapseEleven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEleven">
                                     
                                         <div class="panel-body">
                                             farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
@@ -894,9 +790,9 @@
 
                                 <div class="panel panel-default">
 
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
 
-                                        <div class="panel-heading" role="tab" id="headingFour">
+                                        <div class="panel-heading" role="tab" id="headingTwelve">
 
                                             <div class="row">
 
@@ -922,7 +818,7 @@
 
                                     </a>
 
-                                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                    <div id="collapseTwelve" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwelve">
 
                                         <div class="panel-body">
                                             farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
@@ -938,9 +834,9 @@
 
                                 <div class="panel panel-default">
 
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
 
-                                        <div class="panel-heading" role="tab" id="headingFour">
+                                        <div class="panel-heading" role="tab" id="headingThirteen">
 
                                             <div class="row">
 
@@ -966,7 +862,7 @@
 
                                     </a>
 
-                                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                    <div id="collapseThirteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThirteen">
 
                                         <div class="panel-body">
                                             farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
@@ -978,9 +874,9 @@
 
                                 <div class="panel panel-default">
 
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
 
-                                        <div class="panel-heading" role="tab" id="headingTwo">
+                                        <div class="panel-heading" role="tab" id="headingFourteen">
 
                                             <div class="row">
 
@@ -1006,7 +902,7 @@
 
                                     </a>
 
-                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div id="collapseFourteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFourteen">
 
                                         <div class="panel-body">
                                             farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
@@ -1018,9 +914,9 @@
 
                                 <div class="panel panel-default">
 
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
 
-                                        <div class="panel-heading" role="tab" id="headingThree">
+                                        <div class="panel-heading" role="tab" id="headingFifteen">
 
                                             <div class="row">
 
@@ -1046,7 +942,7 @@
 
                                     </a>
 
-                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div id="collapseFifteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFifteen">
                                     
                                         <div class="panel-body">
                                             farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
@@ -1058,9 +954,9 @@
 
                                 <div class="panel panel-default">
 
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
 
-                                        <div class="panel-heading" role="tab" id="headingFour">
+                                        <div class="panel-heading" role="tab" id="headingSixteen">
 
                                             <div class="row">
 
@@ -1086,7 +982,171 @@
 
                                     </a>
 
-                                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                    <div id="collapseSixteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSixteen">
+
+                                        <div class="panel-body">
+                                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                </div>
+
+                                <div class="title"><p>Payment</p>
+
+                                <div class="panel panel-default">
+
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
+
+                                        <div class="panel-heading" role="tab" id="headingSeventeen">
+
+                                            <div class="row">
+
+                                                <div class="col-md-11">
+
+                                                    <h4 class="panel-title">
+
+                                                        How do i change my Password
+                                                
+                                                    </h4>
+
+                                                </div>
+                                                
+                                                <div class="col-md-1">
+
+                                                    <i class="fa fa-angle-down"></i>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </a>
+
+                                    <div id="collapseSeventeen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeventeen">
+
+                                        <div class="panel-body">
+                                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="panel panel-default">
+
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEighteen" aria-expanded="false" aria-controls="collapseEighteen">
+
+                                        <div class="panel-heading" role="tab" id="headingEighteen">
+
+                                            <div class="row">
+
+                                                <div class="col-md-11">
+
+                                                    <h4 class="panel-title">
+
+                                                        How do i change my Password
+                                                
+                                                    </h4>
+
+                                                </div>
+                                                
+                                                <div class="col-md-1">
+
+                                                    <i class="fa fa-angle-down"></i>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </a>
+
+                                    <div id="collapseEighteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEighteen">
+
+                                        <div class="panel-body">
+                                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="panel panel-default">
+
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNineteen" aria-expanded="false" aria-controls="collapseNineteen">
+
+                                        <div class="panel-heading" role="tab" id="headingNineteen">
+
+                                            <div class="row">
+
+                                                <div class="col-md-11">
+
+                                                    <h4 class="panel-title">
+
+                                                        How do i change my Password
+                                                
+                                                    </h4>
+
+                                                </div>
+                                                
+                                                <div class="col-md-1">
+
+                                                    <i class="fa fa-angle-down"></i>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </a>
+
+                                    <div id="collapseNineteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNineteen">
+                                    
+                                        <div class="panel-body">
+                                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="panel panel-default">
+
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwenty" aria-expanded="false" aria-controls="collapseTwenty">
+
+                                        <div class="panel-heading" role="tab" id="headingTwenty">
+
+                                            <div class="row">
+
+                                                <div class="col-md-11">
+
+                                                    <h4 class="panel-title">
+
+                                                        How do i change my Password
+                                                
+                                                    </h4>
+
+                                                </div>
+                                                
+                                                <div class="col-md-1">
+
+                                                    <i class="fa fa-angle-down"></i>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </a>
+
+                                    <div id="collapseTwenty" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwenty">
 
                                         <div class="panel-body">
                                             farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
@@ -1147,8 +1207,8 @@
                 <br>
             
                 <div class="row">
-                <div class="col-md-2 col-xs-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="col-md-3 col-xs-6">
+                    <p>copyright &copy; 2017 - Workpire</p>
                 </div>
                 <div class="col-md-10 col-xs-6">
                     <p id="footer-icons"><a href = "https://twitter.com/" target = "_blank"><img src="img/twitter.png" class = "icon"></a>
