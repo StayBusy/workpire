@@ -24,28 +24,27 @@
             font-size: 100%;
         }
         .signup-card{
-            max-width: 430px;
+            max-width: 410px;
             min-height: auto;
             position: relative;
             top: 0;
             bottom: 0;
             right: 0;
             left: 0;
-            margin: 7% auto;
+            margin: 6% auto;
             padding: 0 47px;
             background-color: #FFFFFF;
             box-shadow: 0px 0px 1px #674f87, 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
         }
-        .workspire-signup-logo{
-            padding: 20px;
-            text-align: center;
-        }
+
         .signup-content{
             margin: 20px;
+            padding-top: 30px;
             padding-bottom: 60px;            
             color: #674F87;
         }
         .signup-content p.signup-first{
+            padding-bottom:10px;
             text-align: center;
             font-size: 1.7em;
             text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
@@ -118,71 +117,275 @@
             margin-top: 20px;
             font-size:0.9em;
         }
+        body::-webkit-scrollbar-track{
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+          border-radius: 8px;
+          background-color: #F5F5F5;
+        }
+
+        body::-webkit-scrollbar{
+          width: 8px;
+          background-color: #F5F5F5;
+        }
+
+        body::-webkit-scrollbar-thumb{
+          border-radius: 10px;
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+          background-color: #674F87;
+        }
+
+        /*  navbar stylings  */
+        .navbar{
+          padding: 0.5% 3%;
+          background-color: #FFFFFF;
+          margin:0;
+        }
+
+        .navbar-brand{
+          margin-right:0;
+          padding-right: 0;
+        }
+
+        .nav.navbar-nav li a {
+          color: #674F87;
+          
+        }
+
+        .brand-name{
+          letter-spacing: 5px;
+        }
+
+        .nav.navbar-nav.navbar-right li a {
+          color: #674F87;
+        }
+
+        .nav.navbar-nav.navbar-right.white li a {
+          color: #FFFFFF;
+        }
+
+        .nav.navbar-nav.navbar-right.white li a:hover {
+          color: #674F87;
+        }
+
+        .nav.navbar-nav.navbar-right.white#spacer:hover {
+          background-color: transparent;
+        }
+
+        .dropdown-menu.purple{
+          background-color: #674F87;
+        }
+
+        .get-started-btn{
+          transition: background-color 0.5s ease;
+          background-color: #674F87;
+          color: #FFFFFF;
+        }
+
+        .get-started-btn:hover{
+          background-color: #FFFFFF;
+          color: #674F87;
+          border: solid 1px #674F87;
+        }
+
+        .spacer{
+          margin-top: 14px;
+          margin-right: 25px;
+          margin-left: 25px;
+        }
+
+        /*  footer stylings  */
+
+        #footer{
+          position:relative;
+          bottom:0;
+          width: 100%;
+          background-color: #674F87;
+          color: #FFFFFF;
+          padding: 6% 4%;
+          padding-right: 4%;
+        }
+
+        #footer-icons{
+          float: right;
+        }
+
+        .icon{
+          height: 30px;
+          margin-left: 10px;
+        }
+
+        @media only screen and (max-width: 500px) {
+          .nav.navbar-nav.navbar-right{
+            overflow-x:hidden; 
+          }
+          #spacer{
+            display: none;
+          }
+          body, html{
+            overflow-x:hidden; 
+          }
+        }
     </style>
 
 </head>
 <body>
-    <section class="signup-container" >
-        <div class="container-fluid">
-            <div class="signup-card">
-                <div class="workspire-signup-logo" >
-                    <img src="" alt="workspire logo" width="280" height="280" >
-                </div>
-                <div class=" signup-content">
-                    <p class="signup-first">Sign Up</p>
-                    <section class="signup-company"><!--contains company form-->
-                    <div class="signup-nav"><!--navigation-bar-->
-                        <ul>
-                            <li class="signup-companyli">Company</li>
-                            <li class="active signup-applicantli">Applicant</li>
+        <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="img/workpire-logo.png" style="height:120%;" alt="workpire-logo"> </a>
+                  </div>
+              
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              
+                    <ul class="nav navbar-nav">
+                      <li><a href="#"><span class="brand-name">WORKPIRE</span></a></li>
+                    </ul>
+                    
+                    <ul class="nav navbar-nav navbar-right">
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Our service #1</a></li>
+                          <li><a href="#">Our service #2</a></li>
+                          <li><a href="#">Our service #3</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a href="#">Our special service</a></li>
                         </ul>
-                    </div>
-                    <div class="signup-form">
-                        <form action="">
-                            <input type="text" name="signup-companyname" class="signup-data" placeholder="Company Name">
-                            <input type="text" name="signup-companyemail" id="" class="signup-data" placeholder="Company Email">
-                            <input type="password" name="signup-password" id="" class="signup-data" placeholder="Password">
-                            <input type="password" name="signup-password" id="" class="signup-data" placeholder="Confirm Password">
-                            <label class="signup-terms">
-                                <input type="checkbox" name="signup-confirm" id="signup-terms">   I accept the <a href="">Terms and Conditions</a> and
-                                have read the <a href="">Privacy Policy</a>. 
-                            </label>
-                            <button type="submit" class="signup-data">Sign Up</button>                             
+                      </li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Contact</a></li>
+                      <li id="spacer"><p class="spacer">|</p></li>
+                      <li><a href="#">Login</a></li>
+                      <li>
+                        <form class="navbar-form">
+                              <button class="btn btn-default get-started-btn">GET STARTED</button>
                         </form>
+                      </li>
+                    </ul>
+                  </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+              </nav>
+              <section class="signup-container" >
+                    <div class="container-fluid">
+                        <div class="signup-card">
+                            <div class=" signup-content">
+                                <p class="signup-first">Sign Up</p>
+                                <section class="signup-company"><!--contains company form-->
+                                <div class="signup-nav"><!--navigation-bar-->
+                                    <ul>
+                                        <li class="signup-companyli">Company</li>
+                                        <li class="active signup-applicantli">Applicant</li>
+                                    </ul>
+                                </div>
+                                <div class="signup-form">
+                                    <form action="">
+                                        <input type="text" name="signup-companyname" class="signup-data" placeholder="Company Name">
+                                        <input type="text" name="signup-companyemail" id="" class="signup-data" placeholder="Company Email">
+                                        <input type="password" name="signup-password" id="" class="signup-data" placeholder="Password">
+                                        <input type="password" name="signup-password" id="" class="signup-data" placeholder="Confirm Password">
+                                        <label class="signup-terms">
+                                            <input type="checkbox" name="signup-confirm" id="signup-terms">   I accept the <a href="">Terms and Conditions</a> and
+                                            have read the <a href="">Privacy Policy</a>. 
+                                        </label>
+                                        <button type="submit" class="signup-data">Sign Up</button>                             
+                                    </form>
+                                </div>
+                                <div class="signup-signin"><p>Have an account? <a href="signin.html">Sign In</a> </p></div>
+                                </section>
+            
+                                <section class="signup-applicant"><!--contains the applicant form-->
+                                        <div class="signup-nav">
+                                            <ul>
+                                                <li class="active signup-companyli">Company</li>
+                                                <li class="signup-applicantli">Applicant</li>
+                                            </ul>
+                                        </div>
+                                        <div class="signup-form">
+                                            <form action="">
+                                                <input type="text" name="signup-companyname" class="signup-data" placeholder="Name">
+                                                <input type="text" name="signup-companyemail" id="" class="signup-data" placeholder="Email">
+                                                <input type="password" name="signup-password" id="" class="signup-data" placeholder="Password">
+                                                <input type="password" name="signup-password" id="" class="signup-data" placeholder="Confirm Password">
+                                                <label class="signup-terms">
+                                                    <input type="checkbox" name="signup-confirm" id="signup-terms">   I accept the <a href="">Terms and Conditions</a> and
+                                                    have read the <a href="">Privacy Policy</a>. 
+                                                </label>
+                                                <button type="submit" class="signup-data">Sign Up</button>
+                                                 
+                                            </form>
+                                        </div>
+                                        <div class="signup-signin"><p>Have an account? <a href="signin.html">Sign In</a> </p></div>
+                                </section>
+                            </div>
+            
+                        </div>
+            
                     </div>
-                    <div class="signup-signin"><p>Have an account? <a href="signin.html">Sign In</a> </p></div>
-                    </section>
-
-                    <section class="signup-applicant"><!--contains the applicant form-->
-                            <div class="signup-nav">
-                                <ul>
-                                    <li class="active signup-companyli">Company</li>
-                                    <li class="signup-applicantli">Applicant</li>
-                                </ul>
-                            </div>
-                            <div class="signup-form">
-                                <form action="">
-                                    <input type="text" name="signup-companyname" class="signup-data" placeholder="Name">
-                                    <input type="text" name="signup-companyemail" id="" class="signup-data" placeholder="Email">
-                                    <input type="password" name="signup-password" id="" class="signup-data" placeholder="Password">
-                                    <input type="password" name="signup-password" id="" class="signup-data" placeholder="Confirm Password">
-                                    <label class="signup-terms">
-                                        <input type="checkbox" name="signup-confirm" id="signup-terms">   I accept the <a href="">Terms and Conditions</a> and
-                                        have read the <a href="">Privacy Policy</a>. 
-                                    </label>
-                                    <button type="submit" class="signup-data">Sign Up</button>
-                                     
-                                </form>
-                            </div>
-                            <div class="signup-signin"><p>Have an account? <a href="signin.html">Sign In</a> </p></div>
-                    </section>
+            
+                </section>
+              
+              
+              
+              
+              <!-- footer begins here -->
+              <footer id="footer">
+                <div class="">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <h4 class="brand-name"><img src="img/workpire-logo-white.png">&nbsp;&nbsp;&nbsp;WORKPIRE</h4>
+                    </div>
+                    <div class="col-md-8">
+                      
+                    <ul class="nav navbar-nav navbar-right white">
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+                        <ul class="dropdown-menu purple">
+                          <li><a href="#">Our service #1</a></li>
+                          <li><a href="#">Our service #2</a></li>
+                          <li><a href="#">Our service #3</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a href="#">Our special service</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Contact</a></li>
+                      <li id="spacer"><p class="spacer">|</p></li>
+                      <li><a href="#">Login</a></li>
+                      <li>
+                        <form class="navbar-form">
+                              <button class="btn btn-default get-started-btn">GET STARTED</button>
+                        </form>
+                      </li>
+                    </ul>
+                    </div>
+                  </div>
+              
+                  <br>
+                  <hr>
+                  <br>
+              
+                  <div class="row">
+                    <div class="col-md-2 col-xs-6">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="col-md-10 col-xs-6">
+                      <p id="footer-icons"><a href = "https://twitter.com/" target = "_blank"><img src="img/twitter.png" class = "icon"></a>
+                        <a href = "https://facebook.com/" target = "_blank"><img src="img/instagram.png" class = "icon"></a>
+                        <a href = "https://github.com/" target = "_blank"><img src="img/facebook.png" class = "icon"></a>
+                      </p>  
+                    </div>
+                  </div>
                 </div>
-
-            </div>
-
-        </div>
-
-    </section>
+                </footer>
+    
     <script>
         $(document).ready(function(){ //hides the applicant form when document is ready
             $('.signup-applicant').hide();
