@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jobs Listing | Workpire</title>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    </script>
+    <![endif]-->
+    <!--favicon-->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800|Quicksand:400,700');
+
+        body, html{
+            overflow-x:hidden; 
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: #E5E5E5;
+          }
+
+        body::-webkit-scrollbar-track{
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+          border-radius: 8px;
+          background-color: #F5F5F5;
+        }
+
+        body::-webkit-scrollbar{
+          width: 8px;
+          background-color: #F5F5F5;
+        }
+
+        body::-webkit-scrollbar-thumb{
+          border-radius: 10px;
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+          background-color: #674F87;
+        }
+
+        /*  navbar stylings  */
+        .navbar{
+          padding: 0.5% 3%;
+          background-color: #FFFFFF;
+          margin:0;
+          font-family: 'Quicksand', sans-serif;
+        }
+
+        .navbar-brand{
+          margin-right:0;
+          padding-right: 0;
+        }
+
+        .nav.navbar-nav li a {
+          color: #674F87;
+          
+        }
+
+        .brand-name{
+          letter-spacing: 5px;
+          font-family: 'Quicksand', sans-serif;
+          font-weight: bold;
+        }
+
+        .brand-name-nav:hover{
+          color: #674F87;
+        }
+
+        .nav.navbar-nav.navbar-right li a {
+          color: #674F87;
+        }
+
+        .nav.navbar-nav.navbar-right.white li a {
+          color: #FFFFFF;
+        }
+
+        .nav.navbar-nav.navbar-right.white li a:hover {
+          color: #674F87;
+        }
+
+        .nav.navbar-nav.navbar-right.white#spacer:hover {
+          background-color: transparent;
+        }
+
+        .dropdown-menu.purple{
+          background-color: #674F87;
+        }
+
+        .get-started-btn{
+          transition: background-color 0.5s ease;
+          background-color: #674F87;
+          color: #FFFFFF;
+        }
+
+        .get-started-btn:hover{
+          background-color: #FFFFFF;
+          color: #674F87;
+          border: solid 1px #674F87;
+        }
+
+        .spacer{
+          margin-top: 14px;
+          margin-right: 25px;
+          margin-left: 25px;
+        }
+
+        /*  contents stylings  */
+        .purple{
+          color: #674F87;
+        }
+
+        #search{
+          padding: 4% 3%;
+        }
+
+        #search-bar{
+          box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.21);
+          padding: 0;
+        }
+
+        .find-jobs-btn{
+          transition: background-color 0.5s ease;
+          background-color: #674F87;
+          color: #FFFFFF;
+          height: 40px;
+          margin-top: 0;
+          margin-left: 0;
+          margin-right: 0;
+          position: relative;
+          border: 0;
+          width: 35%;
+        }
+
+        .find-jobs-btn:hover{
+          background-color: #766191;
+          /*color: #674F87;*/
+          /*border: solid 1px #674F87;*/
+        }
+
+        .find-jobs-btn:focus{
+          outline: none;
+        }
+
+        #find-jobs-input{
+          height: 40px;
+          margin-right: 0;
+          position: relative;
+          border: 0;
+          width: 65%;
+          padding-left: 8%;
+        }
+
+        #find-jobs-input:focus{
+          outline: none;
+        }
+
+        .searchspan {
+          float: left;
+          margin-left: 3%;
+          margin-top: -30px;
+          position: relative;
+          z-index: 2;
+          height: 20px;
+          color: #444444;
+        }
+
+        #main-content{
+          padding: 0 5%;
+          margin-bottom: 5%;
+        }
+
+        .filters-container h4 span{
+          font-weight: bold;
+        }
+
+        .filters{
+          background-color: #FFFFFF;
+          padding: 1% 3%;
+          padding-right: 5%;
+          padding-bottom: 4%;
+          box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+          border-radius: 3px;
+        }
+
+        .filters h4{
+          font-family: 'Nunito Sans', sans-serif;
+          font-weight: bold;
+        }
+
+        .filters ul{
+          padding-left: 8%;
+        }
+
+        .filters li{
+          list-style: none;
+          margin-bottom: 10px;
+          padding-left: 0;
+        }
+
+        .filters select{
+          margin-left: 8%;
+          margin-right: 8%;
+          width: 90%;
+          background: #FCFCFC;
+          border: 1px solid #674F87;
+          box-sizing: border-box;
+          border-radius: 5px;
+          padding: 2% 2%;
+        }
+
+        .filters input[type=text]{
+          width: 100%;
+          border: none;
+          border-bottom: 1px solid #674F87;
+          padding: 2% 2%;
+        }
+
+        .filters input[type=text]:focus{
+          outline: none;
+        }
+
+        .filters input[type=submit]{
+          border: 1px solid #674F87;
+          border-radius: 3px;
+          padding: 1% 5%;
+          float: right;
+        }
+
+        .filters input[type=submit]:focus{
+          outline: none;
+        }
+
+        .filters select:focus{
+          outline: #674F87;
+        }
+
+        .jobs-list{
+          background-color: #FFFFFF;
+          padding: 1% 5%;
+          margin-left: 1%;
+          box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+          border-radius: 3px;
+        }
+
+        .jobs-list ul{
+          text-align: center;
+          width: 100%;
+        }
+
+        .jobs-list li{
+          list-style: : none;
+          display: inline-block;
+          margin: 1% 2%;
+          cursor: pointer;
+        }
+
+        .jobs-list li.active{
+          border-bottom: 3px solid #674F87;
+        }
+
+        .jobs-list li:hover{
+          color: #674F87;
+        }
+
+        .jobs-list ul > :first-child{
+          margin-left: 0;
+        }
+
+        .jobs-list li h4{
+          font-weight: bold;
+        }
+
+        .jobs-list-item{
+          overflow: hidden;
+          margin: 5% 0;
+          padding: 2% 5%;
+          background: #FFFFFF;
+          box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.25);
+        }
+
+        .jobs-list-item h4{
+          font-weight: bold;
+        }
+
+        .jobs-list-item button{
+          float: right;
+        }
+
+        .pagination{
+         width: 100%;
+        }
+
+        .pagination ul{
+          text-align: center;
+        }
+
+        .pagination li{
+          list-style: : none;
+          display: inline-block;
+          margin: 1% 1%;
+          cursor: pointer;
+          height: 30px;
+          width: 30px;
+          border-radius: 3px;
+          background-color: #C4C4C4;
+          line-height: 30px;
+          font-weight: bold;
+        }
+
+        .pagination li:hover{
+          background-color: #AC97C7;
+        }
+
+        .pagination li.active{
+          background-color: #674F87;
+          color: #FFFFFF;
+        }
+
+        .pagination li.round{
+          height: 10px;
+          width: 10px;
+          line-height: 10px;
+          border-radius: 50%;
+          cursor: default;
+          color:#C4C4C4;
+        }
+
+        .pagination li.round:hover{
+          background-color: #C4C4C4;
+        }
+
+        
+
+        /*  footer stylings  */
+
+        #footer{
+          position:relative;
+          bottom:0;
+          width: 100%;
+          background-color: #674F87;
+          color: #FFFFFF;
+          padding: 6% 4%;
+          padding-right: 4%;
+          font-family: 'Quicksand', sans-serif;
+        }
+
+        #footer-icons{
+          float: right;
+        }
+
+        .icon{
+          height: 30px;
+          margin-left: 10px;
+        }
+
+        @media only screen and (max-width: 780px) {
+          .nav.navbar-nav.navbar-right{
+            overflow-x:hidden; 
+          }
+          #spacer{
+            display: none;
+          }
+          body, html{
+            overflow-x:hidden; 
+          }
+                  
+          body::-webkit-scrollbar{
+            width: 0px;
+            background-color: #F5F5F5;
+          }
+
+          #main-content{
+            padding: 0 2%;
+            margin-bottom: 5%;
+          }
+          .filters-container{
+            padding: 0;
+          }
+
+          .filters{
+            background-color: #FFFFFF;
+            padding: 1% 3%;
+            padding-right: 5%;
+            padding-bottom: 4%;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+            border-radius: 3px;
+            margin: 0;
+            margin-bottom: 5%;
+            overflow: hidden;
+          }
+
+          .jobs-list-container{
+            padding: 0;
+            margin: 0;
+          }
+
+          .jobs-list{
+            background-color: #E5E5E5;
+            box-shadow: none;
+            padding: 1% 3%;
+            margin: 0;
+          }
+
+          .jobs-list ul{
+            text-align: initial;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+          }
+
+          .jobs-list li{
+            list-style: : none;
+            display: inline-block;
+            margin: 1%;
+            cursor: pointer;
+            font-size: 10px;
+          }
+
+          .pagination ul{
+            padding: 0;
+            width: 100%;
+          }
+        }
+  </style>
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/workpire-logo.png" style="height:120%;" alt="workpire-logo"> </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav">
+        <li><a href="#"><span class="brand-name brand-name-nav">WORKPIRE</span></a></li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Our service #1</a></li>
+            <li><a href="#">Our service #2</a></li>
+            <li><a href="#">Our service #3</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Our special service</a></li>
+          </ul>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li id="spacer"><p class="spacer">|</p></li>
+        <li><a href="#">Login</a></li>
+        <li>
+          <form class="navbar-form">
+                <button class="btn btn-default get-started-btn">GET STARTED</button>
+          </form>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
+<section id="search" >
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2" id="search-bar">
+        <input type="text" name="searh" laceholder="search jobs"value="UI/UX Designer" id="find-jobs-input"><button class="find-jobs-btn" >Find Jobs</button>
+        <span class="glyphicon glyphicon-search searchspan" aria-hidden="true"></span>
+      </div>
+    </div> 
+  </div>
+</section>
+
+<section id="main-content">
+<div class="container-fluid filters-container">
+  <h4><span>UI/UX Designer Jobs</span> <small>(100+ jobs)</small></h4>
+  <br>
+  <div class="col-md-3 filters">
+    <h4>Days Posted</h4>
+    <ul>
+      <li>
+        <label>
+          <input type="radio" name="">
+          24 Hours
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="radio" name="">
+          7 Days
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="radio" name="">
+          30 Days
+        </label>
+      </li>
+    </ul>
+    <br>
+    <h4>Monthly Pay</h4>
+     <ul>
+      <li>
+        <label>
+          <input type="radio" name="">
+          0k - 90k
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="radio" name="">
+          90k - 200K
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="radio" name="">
+          200k - 300k
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="radio" name="">
+          300k - 500k
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="radio" name="">
+          500k - 800k
+        </label>
+      </li>
+    </ul>
+    <br>
+    <h4>Company</h4>
+    <select name="Companies">
+      <option value="All">All</option>
+      <option value="WorkPire">WorkPire</option>
+    </select>
+    <br><br>
+    <h4>Find Jobs, Projects and Contracts</h4>
+    <br>
+    <h5>Join mailing lists for weekly updates</h5>
+    <br>
+    <input type="text" name="" placeholder="johndoe@gmail.com">
+    <br><br>
+    <input type="submit" name="" value="submit" class="get-started-btn">
+  </div>
+
+  <div class="col-md-9 jobs-list-container">
+    <div class="jobs-list">
+      <nav>
+        <ul>
+          <li><h4>All</h4></li>
+          <li class="active"><h4>Full Time</h4></li>
+          <li><h4>Remote</h4></li>
+          <li><h4>Contract</h4></li>
+          <li><h4>Freelance</h4></li>
+          <li><h4>Internship</h4></li>
+        </ul>
+      </nav>
+      <div class="jobs-list-item">
+        <h4>UI Design - <span class="purple">Ipsum Groups</span></h4>
+        <h5>Full Time | Pay: 90k - 120k / year</h5>
+        <p>At Ipsum Ltd, we give you an advantage over your competition through our direct relationships with human resources and information technology hiring nagers. We are currently looking to fill our client's UI Designer position.</p>
+        <button class="btn get-started-btn">Apply to Position</button>
+      </div>
+      <div class="jobs-list-item">
+        <h4>UI Design - <span class="purple">Ipsum Groups</span></h4>
+        <h5>Full Time | Pay: 90k - 120k / year</h5>
+        <p>At Ipsum Ltd, we give you an advantage over your competition through our direct relationships with human resources and information technology hiring nagers. We are currently looking to fill our client's UI Designer position.</p>
+        <button class="btn get-started-btn">Apply to Position</button>
+      </div>
+      <div class="jobs-list-item">
+        <h4>UI Design - <span class="purple">Ipsum Groups</span></h4>
+        <h5>Full Time | Pay: 90k - 120k / year</h5>
+        <p>At Ipsum Ltd, we give you an advantage over your competition through our direct relationships with human resources and information technology hiring nagers. We are currently looking to fill our client's UI Designer position.</p>
+        <button class="btn get-started-btn">Apply to Position</button>
+      </div>
+      <div class="jobs-list-item">
+        <h4>UI Design - <span class="purple">Ipsum Groups</span></h4>
+        <h5>Full Time | Pay: 90k - 120k / year</h5>
+        <p>At Ipsum Ltd, we give you an advantage over your competition through our direct relationships with human resources and information technology hiring nagers. We are currently looking to fill our client's UI Designer position.</p>
+        <button class="btn get-started-btn">Apply to Position</button>
+      </div>
+      <div class="jobs-list-item">
+        <h4>UI Design - <span class="purple">Ipsum Groups</span></h4>
+        <h5>Full Time | Pay: 90k - 120k / year</h5>
+        <p>At Ipsum Ltd, we give you an advantage over your competition through our direct relationships with human resources and information technology hiring nagers. We are currently looking to fill our client's UI Designer position.</p>
+        <button class="btn get-started-btn">Apply to Position</button>
+      </div>
+    </div>
+    <div class="pagination">
+      <ul>
+        <li><span class="glyphicon glyphicon-menu-left purple" aria-hidden="true"></span></li>
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li class="round">.</li>
+        <li class="round">.</li>
+        <li class="round">.</li>
+        <li>15</li>
+        <li><span class="glyphicon glyphicon-menu-right purple" aria-hidden="true"></span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+<!-- footer begins here -->
+<footer id="footer">
+  <div class="">
+    <div class="row">
+      <div class="col-md-4">
+        <h4 class="brand-name"><img src="img/workpire-logo-white.png">&nbsp;&nbsp;&nbsp;WORKPIRE</h4>
+      </div>
+      <div class="col-md-8">
+        
+      <ul class="nav navbar-nav navbar-right white">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+          <ul class="dropdown-menu purple">
+            <li><a href="#">Our service #1</a></li>
+            <li><a href="#">Our service #2</a></li>
+            <li><a href="#">Our service #3</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Our special service</a></li>
+          </ul>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li id="spacer"><p class="spacer">|</p></li>
+        <li><a href="#">Login</a></li>
+        <li>
+          <form class="navbar-form">
+                <button class="btn btn-default get-started-btn">GET STARTED</button>
+          </form>
+        </li>
+      </ul>
+      </div>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="row">
+      <div class="col-md-2 col-xs-6">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="col-md-10 col-xs-6">
+        <p id="footer-icons"><a href = "https://twitter.com/" target = "_blank"><img src="img/twitter.png" class = "icon"></a>
+          <a href = "https://facebook.com/" target = "_blank"><img src="img/instagram.png" class = "icon"></a>
+          <a href = "https://github.com/" target = "_blank"><img src="img/facebook.png" class = "icon"></a>
+        </p>  
+      </div>
+    </div>
+  </div>
+  </footer>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#hide").show("slow").fadeIn(4000);
+    });
+  </script>
+</body>
+</html>
