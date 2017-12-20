@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Blog | Workpire</title>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    </script>
+    <![endif]-->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script>
+    //add collapse
+
+    $(document).ready(function() {
+
+    'use strict';
+    $('#myCollapsible').collapse({
+        toggle: true
+      })
+    });
+    </script>
+
+    <style>
+
+        body::-webkit-scrollbar-track {
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+          border-radius: 8px;
+          background-color: #F5F5F5;
+        }
+        body::-webkit-scrollbar {
+          width: 8px;
+          background-color: #F5F5F5;
+        }
+        body::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+          background-color: #674F87;
+        }
+
+        /*  navbar stylings  */
+
+        .navbar {
+          padding: 0.5% 3%;
+          background-color: #FFFFFF;
+          margin:0;
+        }
+        .navbar-brand {
+          margin-right:0;
+          padding-right: 0;
+        }
+        .nav.navbar-nav li a {
+          color: #674F87;
+          
+        }
+        .brand-name{
+          letter-spacing: 5px;
+        }
+        .nav.navbar-nav.navbar-right li a {
+          color: #674F87;
+        }
+        .nav.navbar-nav.navbar-right.white li a {
+          color: #FFFFFF;
+        }
+        .nav.navbar-nav.navbar-right.white li a:hover {
+          color: #674F87;
+        }
+        .nav.navbar-nav.navbar-right.white#spacer:hover {
+          background-color: transparent;
+        }
+        .dropdown-menu.purple{
+          background-color: #674F87;
+        }
+        .get-started-btn{
+          transition: background-color 0.5s ease;
+          background-color: #674F87;
+          color: #FFFFFF;
+        }
+        .get-started-btn:hover{
+          background-color: #FFFFFF;
+          color: #674F87;
+          border: solid 1px #674F87;
+        }
+        .spacer{
+          margin-top: 14px;
+          margin-right: 25px;
+          margin-left: 25px;
+        }
+
+        .demo-content{
+        padding: 15px;
+        font-size: 18px;
+        width: 552px;
+        min-height: 300px;
+        background: #fff;
+        margin-bottom: 5px;
+    }
+    .demo-content h3 {
+color: #674F87;
+    }
+
+    .demo-content.bg-alt{
+        background: #fff;
+
+    }
+    .demo-content.bg-alt h3{
+        color: #674F87;
+
+    
+    }
+
+.demo-content.p{   
+position: absolute;
+width: 552px;
+height: 144px;
+left: 131px;
+top: 939px;
+
+font-family: Nunito Sans;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 25px;
+
+color: #3B3B3B;
+}
+
+/* name */
+.demo-content.h3{
+position: absolute;
+width: 215px;
+height: 25px;
+left: 131px;
+top: 909px;
+
+font-family: Nunito Sans;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+font-size: 5px;
+
+color: #674F87;
+}
+
+/* Ellipse */
+.row.ellipse{
+position: absolute;
+width: 50px;
+height: 50px;
+left: 131px;
+top: 1064px;
+}
+
+/* name */
+.row.ellipse h4 {
+position: absolute;
+width: 153px;
+height: 25px;
+left: 205px;
+top: 1076px;
+
+font-family: Nunito Sans;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+font-size: 18px;
+
+color: #674F87;
+}
+
+
+
+
+
+        /* Body stylings */
+        .search-section {
+            background: url("http://res.cloudinary.com/staybusy/image/upload/v1511514626/Rectangle_k0miai.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            -webkit-background-size: cover;
+            width: 100%;
+            height: 60vh;
+            margin-bottom: 35px;
+        }
+
+        .search-bar {
+            padding-top: 12%;
+            margin-left: 25%;
+        }
+
+        .search-bar p {
+            text-align: center;
+            color: #674F87;
+            font-family: 'nunito sans' sans-serif;
+            font-style: Bold;
+            Font-size: 30px;
+            line-height: 41px;
+        }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        .side-bar{
+            padding: 0;
+            margin: 0;
+        }
+
+        .side-bar {
+            padding-top: 6%;
+            padding-left: 20px;
+        }
+
+        .drop-down {
+            padding-top: 7%;
+            padding-left: 15%;
+        }
+
+        .nav-item {
+            padding-top: 1px;
+            width:200px;
+        }
+
+
+        .nav-link,
+        .nav-link:focus,
+        .nav-link:active,
+        .nav-link:visited {
+            background-color: #674F87;
+            width:100%;
+            color: #dddddd;
+            padding-top: 5px;
+            transition: all 1s;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -o-transition: all 1s;
+        }
+
+        .nav-link:hover {
+        background-color:#674f87;
+        border-color: #000;
+        }
+
+        .search-display {
+            padding-bottom: 5%;
+        }
+
+        .title {
+            padding-bottom: 10%;
+            font-family: 'nunito sans' sans-serif;
+            font-style: Bold;
+            font-size: 18px;
+            line-height: 25px;
+            color: #674F87;
+        }
+
+        .panel-title {
+            font-family: 'nunito sans' sans-serif;
+            font-style: bold;
+            font-size: 16px;
+            color: #333333;
+            line-height: 22px;
+            align: left;
+        }
+
+        /*  footer stylings  */
+        #footer{
+          position:relative;
+          bottom:0;
+          width: 100%;
+          background-color: #674F87;
+          color: #FFFFFF;
+          padding: 6% 4%;
+          padding-right: 4%;
+        }
+        #footer-icons{
+          float: right;
+        }
+        .icon{
+          height: 30px;
+          margin-left: 10px;
+        }
+        @media only screen and (max-width: 500px) {
+          .nav.navbar-nav.navbar-right{
+            overflow-x:hidden; 
+          }
+          #spacer{
+            display: none;
+          }
+          body, html{
+            overflow-x:hidden; 
+          }
+        }
+  </style>
+
+    </head>
+
+    <body>
+        <!--header-->
+        <header>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="img/workpire-logo.png" style="height:120%;" alt="workpire-logo"> </a>
+                    </div>
+                
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                    <ul class="nav navbar-nav">
+                        <li><a href="#"><span class="brand-name">WORKPIRE</span></a></li>
+                    </ul>
+                    
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Our service #1</a></li>
+                            <li><a href="#">Our service #2</a></li>
+                            <li><a href="#">Our service #3</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Our special service</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li id="spacer"><p class="spacer">|</p></li>
+                        <li><a href="#">Login</a></li>
+                        <li>
+                        <form class="navbar-form">
+                                <button class="btn btn-default get-started-btn">GET STARTED</button>
+                        </form>
+                        </li>
+                    </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </header>
+
+        <!--search section-->
+        <section class="search-section">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-6 search-bar">
+
+                       
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+         <div class="container">
+        
+        <!--Row with two equal columns-->
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="http://res.cloudinary.com/dqzvd9adt/image/upload/v1513718662/Rectangle_fc7anb.png">
+                <div class="demo-content">
+                    <h3>ANNOUNCING SERIES A</h3>
+                    <p>
+                        here’s something intrepid about the idea of holidaying alone. You are Jeanne Baret, the first woman circumnavigating the globe 
+
+                    </p>
+                    <div class="ellipse">
+                       <h3> <img src="http://res.cloudinary.com/dqzvd9adt/image/upload/v1513718667/Ellipse_dx7jrg.png"
+                        align="middle">  
+                        By Ukauwa David</h3>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <img src="http://res.cloudinary.com/dqzvd9adt/image/upload/v1513718688/Rec_vcxyci.png">
+                <div class="demo-content bg-alt">
+                     <h3>ANNOUNCING SERIES A</h3>
+                    <p>
+                        here’s something intrepid about the idea of holidaying alone. You are Jeanne Baret, the first woman circumnavigating the globe 
+
+                    </p>
+                    <div class="ellipse">
+                        <h3> <img src="http://res.cloudinary.com/dqzvd9adt/image/upload/v1513718667/Ellipse_dx7jrg.png"
+                        align="middle">  
+                        By Ukauwa David</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!--Row with two equal columns-->
+         <div class="row">
+            <div class="col-sm-6">
+                <img src="http://res.cloudinary.com/dqzvd9adt/image/upload/v1513718662/Rectangle_fc7anb.png">
+                <div class="demo-content">
+                    <h3>ANNOUNCING SERIES A</h3>
+                    <p>
+                        here’s something intrepid about the idea of holidaying alone. You are Jeanne Baret, the first woman circumnavigating the globe 
+
+                    </p>
+                    <div class="ellipse">
+                       <h3> <img src="http://res.cloudinary.com/dqzvd9adt/image/upload/v1513718667/Ellipse_dx7jrg.png"
+                        align="middle">  
+                        By Ukauwa David</h3>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <img src="http://res.cloudinary.com/dqzvd9adt/image/upload/v1513718688/Rec_vcxyci.png">
+                <div class="demo-content bg-alt">
+                     <h3>ANNOUNCING SERIES A</h3>
+                    <p>
+                        here’s something intrepid about the idea of holidaying alone. You are Jeanne Baret, the first woman circumnavigating the globe 
+
+                    </p>
+                    <div class="ellipse">
+                        <h3> <img src="http://res.cloudinary.com/dqzvd9adt/image/upload/v1513718667/Ellipse_dx7jrg.png"
+                        align="middle">  
+                        By Ukauwa David</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+         <!--Row with two equal columns-->
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="http://res.cloudinary.com/dqzvd9adt/image/upload/v1513718662/Rectangle_fc7anb.png">
+                <div class="demo-content">
+                     <h3>ANNOUNCING SERIES A</h3>
+                    <p>
+                        here’s something intrepid about the idea of holidaying alone. You are Jeanne Baret, the first woman circumnavigating the globe 
+
+                    </p>
+                    <div class="ellipse">
+                        <h3> <img src="http://res.cloudinary.com/dqzvd9adt/image/upload/v1513718667/Ellipse_dx7jrg.png"
+                        align="middle">  
+                        By Ukauwa David</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <img src="http://res.cloudinary.com/dqzvd9adt/image/upload/v1513718688/Rec_vcxyci.png">
+                <div class="demo-content bg-alt">
+                     <h3>ANNOUNCING SERIES A</h3>
+                    <p>
+                        here’s something intrepid about the idea of holidaying alone. You are Jeanne Baret, the first woman circumnavigating the globe 
+
+                    </p>
+                    <div class="ellipse">
+                        <h3> <img src="http://res.cloudinary.com/dqzvd9adt/image/upload/v1513718667/Ellipse_dx7jrg.png"
+                        align="middle">  
+                        By Ukauwa David</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!--Row with two equal columns-->
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="http://res.cloudinary.com/dqzvd9adt/image/upload/v1513718662/Rectangle_fc7anb.png">
+                <div class="demo-content">
+                     <h3>ANNOUNCING SERIES A</h3>
+                    <p>
+                        here’s something intrepid about the idea of holidaying alone. You are Jeanne Baret, the first woman circumnavigating the globe 
+
+                    </p>
+                    <div class="ellipse">
+                        <h3> <img src="http://res.cloudinary.com/dqzvd9adt/image/upload/v1513718667/Ellipse_dx7jrg.png"
+                        align="middle">  
+                        By Ukauwa David</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <img src="http://res.cloudinary.com/dqzvd9adt/image/upload/v1513718688/Rec_vcxyci.png">
+                <div class="demo-content bg-alt">
+                     <h3>ANNOUNCING SERIES A</h3>
+                    <p>
+                        here’s something intrepid about the idea of holidaying alone. You are Jeanne Baret, the first woman circumnavigating the globe 
+
+                    </p>
+                    <div class="ellipse">
+                        <h3> <img src="http://res.cloudinary.com/dqzvd9adt/image/upload/v1513718667/Ellipse_dx7jrg.png"
+                        align="middle">
+                        By Ukauwa David </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+    </div>
+
+
+<!--Footer-->
+        <footer id="footer">
+            <div class="">
+                <div class="row">
+                <div class="col-md-4">
+                    <h4 class="brand-name"><img src="img/workpire-logo-white.png">&nbsp;&nbsp;&nbsp;WORKPIRE</h4>
+                </div>
+                <div class="col-md-8">
+                    
+                <ul class="nav navbar-nav navbar-right white">
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+                    <ul class="dropdown-menu purple">
+                        <li><a href="#">Our service #1</a></li>
+                        <li><a href="#">Our service #2</a></li>
+                        <li><a href="#">Our service #3</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Our special service</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li id="spacer"><p class="spacer">|</p></li>
+                    <li><a href="#">Login</a></li>
+                    <li>
+                    <form class="navbar-form">
+                            <button class="btn btn-default get-started-btn">GET STARTED</button>
+                    </form>
+                    </li>
+                </ul>
+                </div>
+                </div>
+            
+                <br>
+                <hr>
+                <br>
+            
+                <div class="row">
+                <div class="col-md-3 col-xs-6">
+                    <p>copyright &copy; 2017 - Workpire</p>
+                </div>
+                <div class="col-md-10 col-xs-6">
+                    <p id="footer-icons"><a href = "https://twitter.com/" target = "_blank"><img src="img/twitter.png" class = "icon"></a>
+                    <a href = "https://facebook.com/" target = "_blank"><img src="img/instagram.png" class = "icon"></a>
+                    <a href = "https://github.com/" target = "_blank"><img src="img/facebook.png" class = "icon"></a>
+                    </p>  
+                </div>
+                </div>
+            </div>
+        
+        </footer>
+
+        <!--bootstrap javaScript-->
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        
+
+        <!--custom jS -->
+        <script src="js/custom.js"></script>
+
+    </body>
+
+</html>
